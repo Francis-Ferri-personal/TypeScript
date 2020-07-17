@@ -62,3 +62,21 @@ console.log("Mensaje", mensaje);
 console.log("Mensaje2", mensaje2);
 
 
+// Tipos especiales de TypeScript
+// Tipo: Any
+
+let desconocido; // Seria como: var desconocido
+desconocido = 2; 
+desconocido = "2";
+let desconociddo2: any = 2; // Cualdquier tipod e contenido JSON, funciones, etc
+
+
+// Tipo Void
+let vacio: void;
+
+function mostrarContenido(curso: string): void{
+    const mensaje = curso? `Bienvenido al ${curso}` : "Suscribete al curso";
+    console.log("mensaje: ",mensaje);
+}
+
+console.log("Mostrar contenido: ", mostrarContenido("typescript"));  // undefined
