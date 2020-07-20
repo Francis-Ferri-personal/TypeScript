@@ -58,3 +58,29 @@ function mostrarContenido(curso) {
     console.log("mensaje: ", mensaje);
 }
 console.log("Mostrar contenido: ", mostrarContenido("typescript")); // undefined
+// Tipo: Never
+var never;
+function retornaError(error) {
+    throw new Error("Erro TypeXcript " + error);
+    // Nunca retorna un valor
+}
+;
+// retornaError("valor inesperado");
+function cicloInfinito() {
+    while (true) {
+    }
+}
+;
+// Tipo: Null y Undefined
+var variableUndefined = undefined;
+var variableNull = null;
+function retornarNull() {
+    return null;
+}
+;
+function retornarUndefined() {
+    return undefined;
+}
+;
+var variableSinValor;
+console.log("variableSinValor", variableSinValor);
