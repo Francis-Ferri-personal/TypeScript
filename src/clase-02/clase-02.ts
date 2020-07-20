@@ -111,3 +111,34 @@ function retornarUndefined(): undefined{
 
 let variableSinValor;
 console.log("variableSinValor", variableSinValor);
+
+// Funciones en TypeScript
+function saludar(nombre?: string): string{
+    if(nombre)
+        return "Hola " + nombre;
+    return "Hola";
+}
+
+console.log(saludar(nombtreCompleto));
+console.log(saludar());
+
+// Arreglos en TypeScript
+let cursosArreglo: string[];
+cursosArreglo = ["TypeScript", "Angular"];
+
+// Arreglos con Generics
+// Interfaz que soportab un tipo generico
+let nombres: Array<string>
+nombres = ["Luis", "Alvaro", "Pepe"];
+
+let arreglo = [2,"cadena",true];
+
+let arregloUnTipo: string[] | number[] | boolean[];
+arregloUnTipo = [1,2,3,4];
+arregloUnTipo = ["1","2","3","4"];
+arregloUnTipo = [true, false, false, true];
+
+let arregloVariosTipos: (string | number | boolean)[];
+arregloVariosTipos = [1, "2", true, 4];
+
+let arrayCualquierValor: any[] = [1, true, "2"];
