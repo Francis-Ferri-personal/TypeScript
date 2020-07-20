@@ -107,3 +107,17 @@ arregloUnTipo = [true, false, false, true];
 var arregloVariosTipos;
 arregloVariosTipos = [1, "2", true, 4];
 var arrayCualquierValor = [1, true, "2"];
+// Tuplas
+var infoCursos = ["TypeScript", 100];
+infoCursos = ["Anular", 200];
+var TuplaCurso = ["TypeScript", 150, "08/2019"];
+console.log("TuplaCurso", TuplaCurso);
+var nuevosInscritos = 10;
+console.log("Fecha de inicio", TuplaCurso[2]);
+console.log("Total Inscritos", TuplaCurso[1] + nuevosInscritos);
+var TuplaTest = ["a", "b"];
+var TuplaTemp = ["c", "d"];
+TuplaTemp = TuplaTest;
+console.log("Tupla Temp: ", TuplaTemp);
+TuplaTest[0] = "gato";
+console.log("Tupla Temp: ", TuplaTemp);

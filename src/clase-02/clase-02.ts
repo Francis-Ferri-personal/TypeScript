@@ -142,3 +142,25 @@ let arregloVariosTipos: (string | number | boolean)[];
 arregloVariosTipos = [1, "2", true, 4];
 
 let arrayCualquierValor: any[] = [1, true, "2"];
+
+// Tuplas
+let infoCursos: [string, number] = ["TypeScript", 100];
+infoCursos = ["Anular", 200];
+
+let TuplaCurso: [string, number, string] = ["TypeScript", 150, "08/2019"];
+console.log("TuplaCurso", TuplaCurso);
+let nuevosInscritos = 10;
+
+
+console.log("Fecha de inicio", TuplaCurso[2]);
+console.log("Total Inscritos", TuplaCurso[1] + nuevosInscritos);
+
+
+let TuplaTest: [string, string] = ["a", "b"];
+let TuplaTemp: [string, string] = ["c", "d"];
+
+TuplaTemp = TuplaTest;
+console.log("Tupla Temp: ", TuplaTemp);
+TuplaTest[0] = "gato";
+console.log("Tupla Temp: ", TuplaTemp);
+
