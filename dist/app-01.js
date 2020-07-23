@@ -1,18 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// ALias para tipos de datos en TypeScript
-var curso = "TypeScript";
-// CUrsos codigo: JavaScript = 1, TypeScript = 2
-//curso = 1; // javaScript
-var cursoNuevo;
-cursoNuevo = "JavaScript";
-cursoNuevo = 2;
-function getCurso() {
-    //return "JavaScript";
-    return 1;
-}
-;
-var cursos = ["JavaScript", "TypeScript"];
-var cursos2 = ["JavaScript", "TypeScript", 1];
-console.log("cursos", cursos);
-console.log("cursos2", cursos2);
+var EscuelaDigital = /** @class */ (function () {
+    // Funciones
+    function EscuelaDigital(nombre) {
+        this.cursos = [];
+        this.nombre = nombre;
+    }
+    EscuelaDigital.prototype.agregarCurso = function (curso) {
+        this.cursos.push(curso);
+    };
+    return EscuelaDigital;
+}());
+var escuela = new EscuelaDigital("EDteam");
+escuela.agregarCurso("TypeScript");
+console.log("escuela", escuela);
+console.log("Nombre Escuela: ", escuela.nombre);
+escuela.agregarCurso("JavaScript");
+console.log("Cursos Escuela: ", escuela.cursos);
