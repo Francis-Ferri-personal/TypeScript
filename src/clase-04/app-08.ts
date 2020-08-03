@@ -1,10 +1,16 @@
-export {}; // Para evitar problemas de reuso
-// HERENCIA DE CLASES
-// Modificadores de acceso protected
-// CLASES ABSTRACTAS
+export {}; 
+// ATRIBUTOS Y METDOS ESTATICOS / STATIC
 
-// <<< EN EXTREMOP UTIL
+enum misCursos {
+    JavaScript,
+    TypeScript,
+    Angular
+}
+
+
 class Curso {
+    public static cursosDisponibles: misCursos[] = [misCursos.JavaScript, misCursos.TypeScript];
+
     constructor(private readonly _id: number, private readonly _nombre: string){}
 
     get id(){
@@ -14,6 +20,10 @@ class Curso {
 
     get nombre(){
         return this._nombre
+    }
+
+    static getInfo(c: Curso){
+        return JSON.stringify(c);
     }
 
 }
@@ -71,5 +81,8 @@ console.log("nombre cursoJS", cursoJS.nombre);// Leyendo estado Get
 console.log("escuela", escuela);
 console.log("Nombre Escuela: ",escuela.nombre);
 console.log("Escuela pagina Web", escuela.paginaWeb);
+
+console.log("Mis Cursos", Curso.cursosDisponibles);
+console.log("CursoJS", Curso.getInfo(cursoJS));
 
 
