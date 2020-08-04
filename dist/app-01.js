@@ -18,12 +18,29 @@ function Entidad(config) {
         console.log('Target', target);
     };
 }
+function enumerable(value) {
+    return function (target, propertyKey, descriptor) {
+        descriptor.enumerable = value;
+    };
+}
+function readonly(target, name, descriptor) {
+    descriptor.writable = false;
+    return descriptor;
+}
 //@Entidad()
 var Curso = /** @class */ (function () {
     function Curso(_id, _nombre) {
         this._id = _id;
         this._nombre = _nombre;
+        this.prueba = "";
     }
+    //@enumerable(true)
+    Curso.prototype.getPrueba = function () {
+        return this.prueba;
+    };
+    Curso.prototype.lectura = function () {
+        // algun algoritmo
+    };
     Object.defineProperty(Curso.prototype, "id", {
         get: function () {
             return this._id;
@@ -44,6 +61,12 @@ var Curso = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    __decorate([
+        enumerable(false) // no aparece como propiedad
+    ], Curso.prototype, "getPrueba", null);
+    __decorate([
+        readonly
+    ], Curso.prototype, "lectura", null);
     Curso = __decorate([
         Entidad({
             clave: "CURSO"
@@ -64,7 +87,16 @@ var EscuelaDigital = /** @class */ (function () {
 function analizarClase(clase) {
     console.log("Clave", clase.clave);
 }
+function mostarPropiedades(clase) {
+    for (var prop in clase.prototype) {
+        console.log("Propiedad", prop);
+    }
+}
 var typeScript = new Curso(1, "TypeScript");
 analizarClase(Curso);
+// Sobreescritura de la funcion
+// Se vuelve una propiedad de solo lectura
+//typeScript.lectura = function() {};
 var esciela = new EscuelaDigital();
 analizarClase(EscuelaDigital);
+mostarPropiedades(Curso);
