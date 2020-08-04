@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# El ** hace que el ignore sea en todo el proyecto
+**/node_modules

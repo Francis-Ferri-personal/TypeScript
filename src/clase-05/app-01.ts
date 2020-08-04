@@ -14,37 +14,12 @@ function Entidad(config: any) {
     }
 }
 
-function enumerable(value: boolean){
-    return function(target: any, propertyKey: string, descriptor: PropertyDescriptor){
-        descriptor.enumerable = value;
-    }
-}
-
-function readonly(target: any, name: any, descriptor: PropertyDescriptor){
-    descriptor.writable = false;
-    return descriptor;
-}
-
 //@Entidad()
 @Entidad({
     clave: "CURSO"
 })
 class Curso{
-    prueba: string;
-    constructor(private _id: number, private _nombre: string){
-        this.prueba = "";
-    }
-
-    //@enumerable(true)
-    @enumerable(false)// no aparece como propiedad
-    getPrueba(){
-        return this.prueba
-    }
-
-    @readonly
-    lectura(){
-        // algun algoritmo
-    }
+    constructor(private _id: number, private _nombre: string){}
 
     get id(){
         return this._id
@@ -70,22 +45,16 @@ class EscuelaDigital{
 
 }
 
+
+
+
 function analizarClase(clase: any){
-    console.log("Clave", clase.clave);   
+    console.log("Clave", clase.clave);
+    
 }
 
-function mostarPropiedades(clase: any){
-    for(let prop in clase.prototype){
-        console.log("Propiedad", prop);
-        
-    }
-}
 
 let typeScript = new Curso(1, "TypeScript");
 analizarClase(Curso);
-// Sobreescritura de la funcion
-// Se vuelve una propiedad de solo lectura
-//typeScript.lectura = function() {};
 let esciela = new EscuelaDigital();
 analizarClase(EscuelaDigital);
-mostarPropiedades(Curso);

@@ -1,31 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// MIEMBRSO PUBLICOS
-var Curso = /** @class */ (function () {
-    function Curso(id, nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
-    return Curso;
-}());
-var EscuelaDigital = /** @class */ (function () {
-    // Funciones
-    function EscuelaDigital(nombre) {
-        this.cursos = [];
-        this.nombre = nombre;
-    }
-    EscuelaDigital.prototype.agregarCurso = function (curso) {
-        this.cursos.push(curso);
-    };
-    return EscuelaDigital;
-}());
-var escuela = new EscuelaDigital("EDteam");
-var cursoJS = new Curso(1, "JavaScript");
-var cursoTS = new Curso(2, "TypeSript");
-escuela.agregarCurso(cursoJS);
-escuela.agregarCurso(cursoTS);
-// Acceder a los atributos publicos
-cursoJS.nombre = "JavaScript desde cero";
-cursoJS.id = 20;
-console.log("escuela", escuela);
-console.log("Nombre Escuela: ", escuela.nombre);
+// Usar unalibreria externa JavaScript
+// package.json
+// npm init -y
+// npm install lodash --save 
+var lodash_1 = require("lodash");
+function numeroAleatorio(a, b) {
+    return lodash_1.random(a, b);
+}
+console.log("Numero aleatorio 1 - 10", numeroAleatorio(1, 10));
+// ya no se necesita envolverla dentro de una funcion
+console.log("random", lodash_1.random(1, 10));
